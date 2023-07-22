@@ -1,7 +1,7 @@
 import type { Component } from 'solid-js';
 import { createSignal, Show, For } from 'solid-js';
-import { Task, TaskForm } from './components/task/task'; 
-// import TaskForm from './components/form/form';
+import { Task } from './components/task/task'; 
+import { TaskForm } from './components/form/form';
 import { Modal } from './components/modal/modal';
 import { todos, removeDoneTasks } from './state/todo';
 
