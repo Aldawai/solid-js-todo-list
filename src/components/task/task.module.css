@@ -1,0 +1,61 @@
+
+.row{
+	border-bottom: var(--border);
+	display: flex;
+	align-items: stretch;
+    justify-content: space-between;
+	height: 40px;
+}
+
+.moveIn{
+	animation: 1s ease moveIn forwards;
+}
+
+.moveOut{
+	animation: 1s ease moveOut forwards;
+}
+
+.checkboxContainer{
+	display: flex;
+	display: flex;
+    align-items: center;
+}
+
+.checkbox{
+	accent-color: var(--violet-400);
+	height: 20px;
+	width: 20px;
+	cursor: pointer;
+}
+
+.span{
+	width: 100%;
+	overflow: hidden;
+	/*text-overflow: ellipsis;*/
+	white-space: nowrap;
+	display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.edit, .remove{
+	outline: none;
+	border: none;
+	background: transparent;
+	margin: 3px 1px;
+	cursor: pointer;
+}
+
+.edit:hover{
+	color: white;
+	background: var(--violet-400);
+}
+
+.remove{
+	color: white;
+	background: var(--red-500);
+}
+
+.remove:hover{
+	background: var(--red-300);
+}
