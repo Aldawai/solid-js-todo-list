@@ -1,14 +1,11 @@
-import { Component } from "solid-js";
+import type { Component } from "solid-js";
 import { Todo } from "../../types";
 import { addTask, todos } from "../../state/todo";
 
 import CSS from "./form.module.css";
 
-interface PropType {
-    todo: Todo;
-}
 
-const TaskForm: Component<PropType> = () => {
+const TaskForm: Component = () => {
 	let input: HTMLInputElement | undefined;
 
 	const handleSubmit = (e: SubmitEvent) => {
