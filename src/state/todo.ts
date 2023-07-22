@@ -49,14 +49,14 @@ function removeTask(id: string) {
     setTodos(todos.filter(task => task.id != id));
 }
 
-function editTask(id: string, title: string) {
+function editTask(id: string, title: string, done?: boolean) {
     setTodos(
         todos.map(task => {
             if(task.id == id) {
                 let newDatas = {
                     id: task.id,
                     title,
-                    done: task.done,
+                    done: (done != undefined|| done != null)? done : task.done,
                     children: task.children
                 };
                 return newDatas;

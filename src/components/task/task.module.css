@@ -31,19 +31,23 @@
 .span{
 	width: 100%;
 	overflow: hidden;
-	/*text-overflow: ellipsis;*/
+	text-overflow: ellipsis;
 	white-space: nowrap;
-	display: flex;
-    align-items: center;
-    justify-content: flex-start;
+	margin: auto 0;
 }
 
 .edit, .remove{
 	outline: none;
 	border: none;
+	border-width: 1px;
 	background: transparent;
 	margin: 3px 1px;
 	cursor: pointer;
+	border-radius: 4px;
+}
+
+.edit{
+	border: 1px solid var(--violet-400);
 }
 
 .edit:hover{
@@ -53,9 +57,18 @@
 
 .remove{
 	color: white;
+	border: 1px solid var(--red-500);
 	background: var(--red-500);
 }
 
 .remove:hover{
 	background: var(--red-300);
+}
+
+.closer path{
+	stroke: white;
+}
+
+.closer:hover path{
+	stroke: white;
 }

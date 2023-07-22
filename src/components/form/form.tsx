@@ -1,5 +1,5 @@
 import type { Component } from "solid-js";
-import { Todo } from "../../types";
+import { Task as Todo } from "../../types";
 import { addTask, todos } from "../../state/todo";
 
 import CSS from "./form.module.css";
@@ -11,7 +11,9 @@ const TaskForm: Component = () => {
 	const handleSubmit = (e: SubmitEvent) => {
 		e.preventDefault();
 
-		if (input == null || input.value.replaceAll(" ", "") == "") {
+		if(!input) return;
+
+		if (input == undefined || input.value.replaceAll(" ", "") == "") {
 			input.value = "";
 			input.focus();
 			return;
@@ -31,4 +33,4 @@ const TaskForm: Component = () => {
     );
 };
 
-export default { TaskForm };
+export default TaskForm;

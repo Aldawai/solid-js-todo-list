@@ -9,11 +9,7 @@ interface PropType {
     modal: any;
 }
 
-const Task: Component<PropType> = ({ todo, modal }) => {
-	let checkBox: HTMLInputElement | undefined;
-	let title: HTMLSpanElement | undefined;
-	let row: HTMLDivElement | undefined;
-
+const Task: Component<PropType> = ({ todo, setModal }) => {
 	function handleCheckBoxChange() {
 		doneTask(todo.id)
 	}
@@ -23,42 +19,29 @@ const Task: Component<PropType> = ({ todo, modal }) => {
 	};
 
 	const Edit = () => {
-		modal();
-	};
-
-	const handleEdit = () => {
-		if(title) {
-			title.setAttribute('contenteditable', 'true');
-			title.focus();
-			const setVal = (value: string)=>{
-				editTask(todo.id, value);
-			};
-			title.addEventListener('keydown', (e: KeyboardEvent) => {
-				if( e.key == "Enter" && title) {
-					setVal(title.innerText);
-					title.setAttribute('contenteditable', 'false');
-				}
-			});
-	
-			title.addEventListener('blur', (e: FocusEvent) => {
-				if(title){
-					setVal(title.innerText);
-					title.setAttribute('contenteditable', 'false');
-				}
-			});
-		}
+		setModal({status: true, todo: todo});
 	};
 
     return (
-        <div ref={row} class={CSS.row}>
+        <div class={CSS.row}>
 			<div class={CSS.checkboxContainer}>
-				<input type="checkbox" class={CSS.checkbox} id={todo.id} checked={todo.done} ref={checkBox} onChange={handleCheckBoxChange} />
+				<input
+					type="checkbox"
+					class={CSS.checkbox}
+					id={todo.id}
+					checked={todo.done}
+					onChange={handleCheckBoxChange}
+				/>
 			</div>
-        	<span ref={title} class={CSS.span}>{ todo.title }</span>
+        	<span title={todo.title} class={CSS.span}>{ todo.title }</span>
         	<button onClick={Edit} class={CSS.edit}>Edit</button>
-        	<button onClick={handleRemove} class={CSS.remove}>Remove</button>
+        	<button onClick={handleRemove} title='remove' class={CSS.remove}>
+        		<svg class={CSS.closer} height="20" width="20">
+	        		<path d="M1 1L 19 19M1 19L19 1" stroke-width="2" stroke="black"/>
+	        	</svg>
+        	</button>
         </div>
     );
 };
 
-export default { Task };
+export default Task;
