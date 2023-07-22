@@ -34,4 +34,4 @@ const TaskForm: Component<PropType> = () => {
     );
 };
 
-export default { TaskForm };
+export default TaskForm;
