@@ -52,7 +52,7 @@ const Modal: Component<any> = ({ todo, setModal }) => {
 	        			<span>Status</span>
 	        			<div class={GLOBALCSS.checkboxContainer}>
 	        				<input type='checkbox' onChange={handleChange} checked={todo.done} class={GLOBALCSS.checkbox} ref={status} id='done' value={todo.done} />
-	        			<span>{ done()? "Done" : "Undone" }</span>
+	        			<span>{ done()? "Completed" : "Not completed" }</span>
 	        			</div>
 	        		</label>
 	        		<label for='title'>
@@ -62,7 +62,10 @@ const Modal: Component<any> = ({ todo, setModal }) => {
 	        				<span class={CSS.textError}>Provide task title</span>
 	        			</Show>
 	        		</label>
-	        		<button type='submit' class={GLOBALCSS.primaryBtn}>Save</button>
+	        		<div class={CSS.btnGroup}>
+		        		<button type='submit' class={GLOBALCSS.primaryBtn}>Save</button>
+		        		<button type='button' onClick={handleCLose} class={GLOBALCSS.cancelBtn}>Cancel</button>
+	        		</div>
 	        	</form>
 	        </div>
         </div>

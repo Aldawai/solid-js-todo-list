@@ -8,6 +8,7 @@
 	--violet-400: #b50c9d;
 	--violet-100: #b50c9d40;
 	--border: 1px solid var(--violet-400);
+	--red-border: 1px solid var(--red-300);
 }
 
 *{
@@ -71,7 +72,7 @@
 	font-family: "Clash Display", sans-serif;
 }
 
-.primaryBtn{
+.primaryBtn, .cancelBtn{
 	padding: 10px;
 	border-radius: 8px;
 	background-color: var(--violet-400);
@@ -86,6 +87,18 @@
 	background-color: var(--violet-100);
 	color: var(--violet-400);
 	border: var(--border);
+}
+
+.cancelBtn{
+	background-color: transparent;
+	color: var(--red-300);
+	border: var(--red-border);
+}
+/**/
+.cancelBtn:hover{
+	background-color: var(--red-300);
+	color: white;
+	border: var(--red-border);
 }
 
 .tasksList{

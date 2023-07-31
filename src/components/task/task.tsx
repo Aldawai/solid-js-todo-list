@@ -6,7 +6,7 @@ import CSS from "./task.module.css";
 
 interface PropType {
     todo: Todo;
-    modal: any;
+    setModal: any;
 }
 
 const Task: Component<PropType> = ({ todo, setModal }) => {
@@ -34,9 +34,9 @@ const Task: Component<PropType> = ({ todo, setModal }) => {
 				/>
 			</div>
         	<span title={todo.title} class={CSS.span}>{ todo.title }</span>
-        	<button onClick={Edit} class={CSS.edit}>Edit</button>
-        	<button onClick={handleRemove} title='remove' class={CSS.remove}>
-        		<svg class={CSS.closer} height="20" width="20">
+        	<button onClick={Edit} title='Edit' class={CSS.edit}>Edit</button>
+        	<button onClick={handleRemove} title='Remove' class={CSS.remove}>
+        		<svg class={CSS.closer} height="20" width="20" viewBox='0 0 20 20'>
 	        		<path d="M1 1L 19 19M1 19L19 1" stroke-width="2" stroke="black"/>
 	        	</svg>
         	</button>
